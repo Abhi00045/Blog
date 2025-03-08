@@ -1,0 +1,86 @@
+#mainbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 10vh;
+}
+#logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    img{
+        width: 2rem;
+        height: 2rem;
+    }
+    span{
+        font-weight: 600;
+    }
+}
+#mobileMenu{
+    display: none;
+}
+#menubarMobile{
+    cursor: pointer;
+}
+/* #menuList:active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem 2rem;
+} */
+@media screen and (min-width: 768px) {
+    #mobileMenu{
+        display: none;
+    }
+    #desktopMenu{
+        display: flex;
+    }
+}
+@media screen and (max-width: 768px) {
+    #mobileMenu{
+        display: flex;
+    }
+    #desktopMenu{
+        display: none;
+    }
+}
+
+#desktopMenu{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    button{
+        padding: 0.5rem 1rem;
+        /* border: 1px solid #000; */
+        border-radius: 5px;
+        cursor: pointer;
+        background-color:  #8686e8;
+        color: #fff;
+    }
+    div:hover{
+        hr{
+            border: 1px solid #000000;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            animation-name: menubarHorizontal;
+            animation-duration: 1s; 
+            animation-fill-mode: forwards;
+            
+        }
+    }
+}
+@keyframes menubarHorizontal {
+    0%{
+       width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+    
+}
