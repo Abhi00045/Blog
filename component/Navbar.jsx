@@ -1,6 +1,7 @@
 
 import '../component/Navbar.css'
 import { useState } from 'react';
+import { IKImage } from 'imagekitio-react';
 
 
 const  Navbar = () => {
@@ -9,7 +10,7 @@ const  Navbar = () => {
         <div id='mainbar' className='md:h-20 w-full'>
             {/* Logo */}
             <div id='logo'>
-                <img src="/logo.png" alt="" />
+                <IKImage urlEndpoint={import.meta.env.IK_URL_ENDPOINT} path="/logo.png" alt="" />
                 <span>AbhiLog</span>
             </div>
             {/* mobileMEnu */}
