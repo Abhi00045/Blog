@@ -1,6 +1,9 @@
 
+import { Link } from 'react-router-dom';
 import '../component/Navbar.css'
 import { useState } from 'react';
+import Home from '../src/pages/Home';
+import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 
 
 const  Navbar = () => {
@@ -10,7 +13,7 @@ const  Navbar = () => {
             {/* Logo */}
             <div id='logo'>
                 {/* <IKImage urlEndpoint={import.meta.env.IK_URL_ENDPOINT} path="/logo.png" alt="" /> */}
-                <img src="/logo.png" alt="" />
+                <Link to={"/"}><img src="/logo.png" alt="" /></Link>
                 <span>AbhiLog</span>
             </div>
             {/* mobileMEnu */}
@@ -25,7 +28,7 @@ const  Navbar = () => {
             {/* desktopMenu */}
             <div className="" id='desktopMenu'>
                 <div id="first">
-                <a href="/">Home</a>
+                <Link to="/"><Home/></Link>
                 <hr />               
                 </div>
                 <div id="second">
@@ -41,9 +44,16 @@ const  Navbar = () => {
                 <hr />
                 </div>
                 
-                <a href="">
+                
+
+                <SignedOut>
+                <Link to="/login">
                     <button>Login</button>
-                </a>
+                </Link>
+      </SignedOut>
+      <SignedIn>
+        <UserButton/>
+      </SignedIn>
             </div>
 
         </div>

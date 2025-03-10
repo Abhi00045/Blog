@@ -57,10 +57,10 @@
     button{
         padding: 0.5rem 1rem;
         /* border: 1px solid #000; */
-        border-radius: 5px;
+        border-radius: 25px;
         cursor: pointer;
         background-color:  #8686e8;
-        color: #fff;
+        color: #ffffff;
     }
     div:hover{
         hr{
