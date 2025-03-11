@@ -28,7 +28,7 @@ const  Navbar = () => {
             {/* desktopMenu */}
             <div className="" id='desktopMenu'>
                 <div id="first">
-                <Link to="/"><Home/></Link>
+                <Link to="/">Home</Link>
                 <hr />               
                 </div>
                 <div id="second">

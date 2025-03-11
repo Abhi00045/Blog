@@ -6,5 +6,43 @@
     top: 0;
 }
 #top-home{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-around;
+   padding-top: 15px;
+   padding-left: 25px;
+}
+#first-top{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    #Blogs{
+        cursor: pointer;
+        color: rgb(94, 94, 207);
+    }
+}
+#Introduction-home{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+#Introduction-left{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    h1{
+        font-size: 40px;
+        font-weight: 800;
+        color: rgb(35, 34, 34);
+    }
+    p{
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+    }
+}
+#Introduction-right{
+    padding-right: 100px;
 }
