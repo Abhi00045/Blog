@@ -1,60 +1,64 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Navbar.css'
+// import './Navbar.css'
 
 function FeaturedComponent() {
   return (
     <>
-    <div id="main-featuredPost">
+    <div id="main-featuredPost" className="mt-8 flex flex-col lg:flex-col gap-8">
       {/* first-post */}
-      <div id="first-featuredPost">
+      <div id="first-featuredPost" className="mt-8 flex flex-col lg:flex-row gap-8">
         {/* image */}
-        <img src="./featured1.jpeg" alt="first-post" />
+        <img src="./featured1.jpeg" alt="first-post"   className="rounded-3xl object-cover"
+          width="895" />
         {/* details */}
-        <div id="details-post">
-          <h1>01.</h1>
-          <Link className='text-indigo-500 font-semibold'>Web Design</Link>
-          <span>2 days ago</span>
+        <div id="details-post" className="flex items-center gap-4">
+          <h1 className="font-semibold lg:text-lg">01.</h1>
+          <Link className="text-blue-800 lg:text-lg">Web Design</Link>
+          <span className="text-gray-500">2 days ago</span>
         </div>
         {/* title */}
-        <Link className='md:text-2xl font-semibold lg:text-3xl'>Lorem ipsum dolor sit amet consectetur.</Link>
+        <Link  className="text-xl lg:text-3xl font-semibold lg:font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</Link>
       </div>
       {/* other-posts */}
-      <div id="featured-remaining-three">
+      <div id="featured-remaining-three" className="w-full lg:w-1/2 flex flex-col gap-4">
         {/* second-post */}
-        <div id="second-post">
-          <img src="./featured2.jpeg" alt="" />
-        <div id="second-post-right">
-          <div id="details-post-second">
-          <h1>01.</h1>
-          <Link>Web Design</Link>
-          <span>2 days ago</span>
+        <div id="second-post" className="lg:h-1/3 flex justify-between gap-4">
+          <img src="./featured2.jpeg" alt="" className="rounded-3xl object-cover w-full h-full"
+              width="298" />
+        <div id="second-post-right" className="w-2/3">
+          <div id="details-post-second" className="flex items-center gap-4 text-sm lg:text-base mb-4">
+          <h1 className="font-semibold">01.</h1>
+          <Link className="text-blue-800">Web Design</Link>
+          <span className="text-gray-500 text-sm">2 days ago</span>
         </div>
-        <Link>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, aut.</Link>
+        <Link className="text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, aut.</Link>
           </div>
           </div>
         {/* third-post */}
-        <div id="second-post">
-          <img src="./featured3.jpeg" alt="" />
-        <div id="second-post-right">
-          <div id="details-post-second">
-          <h1>01.</h1>
-          <Link>Web Design</Link>
-          <span>2 days ago</span>
+        <div id="second-post" className="lg:h-1/3 flex justify-between gap-4">
+          <img src="./featured2.jpeg" alt="" className="rounded-3xl object-cover w-full h-full"
+              width="298" />
+        <div id="second-post-right" className="w-2/3">
+          <div id="details-post-second" className="flex items-center gap-4 text-sm lg:text-base mb-4">
+          <h1 className="font-semibold">01.</h1>
+          <Link className="text-blue-800">Web Design</Link>
+          <span className="text-gray-500 text-sm">2 days ago</span>
         </div>
-        <Link>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, cumque?</Link>
+        <Link className="text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, aut.</Link>
           </div>
           </div>
         {/* fourth-post */}
-        <div id="second-post">
-          <img src="./featured4.jpeg" alt="" />
-        <div id="second-post-right">
-          <div id="details-post-second">
-          <h1>01.</h1>
-          <Link>Web Design</Link>
-          <span>2 days ago</span>
+        <div id="second-post" className="lg:h-1/3 flex justify-between gap-4">
+          <img src="./featured2.jpeg" alt="" className="rounded-3xl object-cover w-full h-full"
+              width="298" />
+        <div id="second-post-right" className="w-2/3">
+          <div id="details-post-second" className="flex items-center gap-4 text-sm lg:text-base mb-4">
+          <h1 className="font-semibold">01.</h1>
+          <Link className="text-blue-800">Web Design</Link>
+          <span className="text-gray-500 text-sm">2 days ago</span>
         </div>
-        <Link>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, autem!</Link>
+        <Link className="text-base sm:text-lg md:text-2xl lg:text-xl xl:text-2xl font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, aut.</Link>
           </div>
           </div>
         </div>
