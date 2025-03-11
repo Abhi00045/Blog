@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../main.css'
-import MainCategories from '../../component/MainCategories'
+import MainCategories from '../component/MainCategories'
+import FeaturedComponent from '../component/FeaturedComponent'
 
 function Home() {
   return (
@@ -66,6 +67,7 @@ function Home() {
 
       {/* Maincategories */}
       <MainCategories/>
+      <FeaturedComponent/>
     </div>
     </>
   )

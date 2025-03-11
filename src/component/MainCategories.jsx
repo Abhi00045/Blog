@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../component/Navbar.css'
+import './Navbar.css'
+import Search from './Search'
 
 function MainCategories() {
   return (
@@ -15,11 +16,9 @@ function MainCategories() {
             <Link to='/posts' id='remaining-posts'>Search Engines</Link>
             <Link to='/posts' id='remaining-posts'>Marketing</Link>
         </div>
+        <span>|</span>
         {/* search */}
-        <div id="search-categories">
-            
-        </div>
-
+        <Search/>
     </div>
     </>
   )

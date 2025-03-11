@@ -1,8 +1,8 @@
 
 import { Link } from 'react-router-dom';
-import '../component/Navbar.css'
+import './Navbar.css'
 import { useState } from 'react';
-import Home from '../src/pages/Home';
+// import Home from '../src/pages/Home';
 import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 
 

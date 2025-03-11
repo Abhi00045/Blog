@@ -87,18 +87,22 @@
 
 /* MainCategories */
 #main-categories{
+    margin-top: 10px;
     display: flex;
     background: #fdfdfd;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    height: 8vh;
+    /* flex-wrap: wrap; */
+    padding: 10px;
+    /* padding: 2rem; */
+    /* height: 8vh; */
     border-radius: 25px;
     #Link-categories{
         display: flex;
         flex-direction: row;
         gap: 1.75rem;
+        flex-wrap: wrap;
         /* padding: 2rem ; */
         align-items: center;
         #all-posts{
@@ -109,7 +113,7 @@
             color: #ffffff;
         }
         #remaining-posts{
-            padding: 13px;
+            padding:10px;
             border-radius: 25px;
             cursor: pointer;
             background-color:  #ffffff;
@@ -129,5 +133,76 @@
 @media screen and (min-width:800px) {
     #main-categories{
         display: flex;
+    }
+}
+
+/* FeaturedComponent */
+#main-featuredPost{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 80vw;
+    height: 70vh;
+    flex-wrap: wrap;
+
+    #first-featuredPost{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        img{
+            border-radius: 25px;
+            height: 75%;
+            width:75%;
+        }
+        #details-post{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            h1{
+                color: #000000;
+            }
+            Link{
+                font-weight: 600;
+            }
+            span{
+                color: #6666e7;
+            }
+        }   
+    }
+    #featured-remaining-three{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        #second-post{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            img{
+                border-radius: 25px;
+                height: 120px;
+                width: 120px;
+            }
+            #details-post-second{
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                align-items: center;
+                h1{
+                    color: #000000;
+                }
+                Link{
+                    font-weight: 600;
+                }
+                span{
+                    color: #6666e7;
+                }
+            }   
+        }
     }
 }
