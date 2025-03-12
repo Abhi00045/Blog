@@ -143,16 +143,15 @@
     justify-content: space-around;
     align-items: center;
     margin-top: 1rem;
-    gap: 2rem;
-    width: 100%;
-    
-
+    gap: 2rem; 
+height: 50%;
 }
 #left-featuredComponent{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
+    width: 50%;
     img{
         width: 100%;
         height: 100%;
@@ -191,9 +190,16 @@
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
+    width: 50%;
+}
+#right-second{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
     img{
-        width: 100%;
-        height: 100%;
+        width: 150px;
+        height: 150px;
         border-radius: 25px;
     }
     #left-post-one{
@@ -219,7 +225,7 @@
         }
         #main{
             font-weight: 600;
-            font-size: 25px;
+            font-size: 15px;
             color: #030303;
         }
     }
