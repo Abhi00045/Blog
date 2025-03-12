@@ -179,9 +179,9 @@ height: 50%;
             }
         }
         #main{
-            font-weight: 600;
-            font-size: 25px;
-            color: #030303;
+            font-weight: 700;
+            font-size: 20px;
+            color: #242323;
         }
     }
 }
@@ -224,9 +224,63 @@ height: 50%;
             }
         }
         #main{
-            font-weight: 600;
+            font-weight: 500;
             font-size: 15px;
             color: #030303;
         }
     }
+}
+
+/* post-List-css */
+#main-postList-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.25rem;
+    gap: 1rem;
+    /* height: 40vh; */
+}
+#left-postList-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 50%; */
+    img{
+        width: 80%;
+        height: 80%;
+        border-radius: 25px;
+    }
+}
+#right-postList-card{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: start;
+    /* width: 50%; */
+    h1{
+        font-weight: 600;
+        color: #2d2d2e;
+        font-size: 25px;
+    }
+    #authors-title-time{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        align-items: center;
+        p{
+            color: #424040;
+            /* padding-right: 2px; */
+        }
+        span{
+            color: #000000;
+            padding: 2px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+    p{
+        font-size: 13px;
+    }
+    
 }

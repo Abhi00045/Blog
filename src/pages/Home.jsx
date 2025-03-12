@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../main.css'
 import MainCategories from '../component/MainCategories'
 import FeaturedComponent from '../component/FeaturedComponent'
+import PostList from '../component/PostList'
 
 function Home() {
   return (
@@ -67,7 +68,12 @@ function Home() {
 
       {/* Maincategories */}
       <MainCategories/>
+      {/* featuredPosts */}
       <FeaturedComponent/>
+      
+      <p className='px-2 m-3 underline uppercase'>Recent Posts</p>
+      
+      <PostList/>
     </div>
     </>
   )
