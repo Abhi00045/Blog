@@ -284,3 +284,66 @@ height: 50%;
     }
     
 }
+
+#single-top-page{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    #head-top-page{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: start;
+        h1{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        #authors-title-time{
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            align-items: center;
+            p{  
+                color: #424040;
+                font-size: 15px;                
+            }
+            span{
+                color: #000000;
+                padding: 2px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+        p{
+            font-size: 13px;
+        }
+    }
+    #image-top-page{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        img{
+            width: 80%;  
+            border-radius: 25px;          
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    #image-top-page{
+        display: none;
+    }
+    #head-top-page{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #image-top-page{
+        display: none;
+    }
+    #head-top-page{
+        width: 100%;
+    }
+    
+}
