@@ -239,6 +239,7 @@ height: 50%;
     align-items: center;
     margin-top: 1.25rem;
     gap: 1rem;
+    
     /* height: 40vh; */
 }
 #left-postList-card{
@@ -515,4 +516,44 @@ height: 50%;
             font-size: 15px;
         }
     }
+}
+
+#search-four{
+    h2{
+        font-weight: 600;
+        margin:5px;
+    }
+}
+#three-categories{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    h3{
+        font-weight: 600;
+    }
+    #category{
+        text-decoration: underline;
+    }
+}
+#filters{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    h2{
+        font-weight: 600;
+    }
+    #one{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}
+#main-menu{
+    display: flex;
+    margin-top: 35PX;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
 }

@@ -138,3 +138,13 @@
         }
     }   
 }
+ /* postListpage */
+
+ #main-postList{
+    margin-top: 20PX;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+ }
+ 
