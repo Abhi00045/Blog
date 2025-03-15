@@ -349,13 +349,14 @@ height: 50%;
 }
 #single-bottom-page{
     margin-top: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    align-items: center;
+    /* align-items: center; */
     #bottom-left{
         display: flex;
-
+        /* border: 2px solid black; */
         flex-direction: column;
         gap: 0.75rem;
         /* align-items: start; */
@@ -366,13 +367,17 @@ height: 50%;
     }
 }
 #bottom-right-menu{
+    /* border: 2px solid black; */
+    /* margin: 0; */
+    padding: 10px;
     display: flex;
+    height: fit-content;
     flex-direction: column;
     gap: 1rem;
     justify-content: start;
-    position: sticky;
-    top: 0;
-    right: 0;
+    position:sticky;
+    top: 5px;
+
     #one-author{
         display: flex;
         flex-direction: column;
@@ -440,6 +445,74 @@ height: 50%;
         }
         #category{
             text-decoration: underline;
+        }
+    }
+    #search-four{
+        h3{
+            font-weight: 600;
+            margin:5px;
+        }
+    }
+}
+ /* Comments , comments single */
+
+ #comment-input{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    input{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button{
+        padding: 10px 20px;
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: #429aff;
+    }
+}
+#comment-box{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    #title-author-box{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+        }
+        span{
+            font-weight: 600;
+            color: #429aff;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+    #comment{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        p{
+            font-size: 15px;
         }
     }
 }

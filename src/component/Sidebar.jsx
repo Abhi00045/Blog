@@ -48,6 +48,7 @@ function Sidebar() {
                 </div>
              </div>
              <div id="search-four">
+               <h3>Search</h3>
                <Search/>
              </div>
            </div>

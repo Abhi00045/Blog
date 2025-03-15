@@ -1,6 +1,8 @@
 import React from 'react'
 import './Navbar.css'
 import Sidebar from './Sidebar'
+import Comments from './comments'
+import SingleComment from './SingleComment'
 
 function SinglePostPage() {
   return (
@@ -31,7 +33,9 @@ function SinglePostPage() {
         </div>
         <Sidebar/>
     </div>
-    </>
+    <Comments/>
+    <SingleComment className='m-2'/>
+</>
   )
 }
 
