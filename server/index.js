@@ -13,6 +13,6 @@ app.use("/comment", commentRouter);
 connectDb();
 
 
-app.listen(8171, () => {
-    console.log('Server is running on port 8171');
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
 })

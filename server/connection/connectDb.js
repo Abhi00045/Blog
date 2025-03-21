@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+// import userSchema from "../model/user.model";
 dotenv.config();
 
 const connectDb = async () => {
@@ -7,7 +8,7 @@ const connectDb = async () => {
         await mongoose.connect(process.env.MONGO);
         console.log("Connected to MongoDB");
 
-        
+
     } catch(error) {
         console.log(error);     
     }

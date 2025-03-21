@@ -6,15 +6,20 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     email: {    
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     img:{
         type: String,
     },
-    s
-})
+    savedPosts:{
+        type: Schema.Types.ObjectId,
+        default: [],
+    },    
+},{timestamps: true},);
+
+export default userSchema;
