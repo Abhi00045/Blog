@@ -4,7 +4,8 @@ import postRouter from './Routes/post.route.js'
 import commentRouter from './Routes/comment.route.js'
 import connectDb from './connection/connectDb.js'
 
-const app = express()
+const app = express();
+app.use(express.json)
 
 app.use("/user", useRouter);
 app.use("/post", postRouter);
