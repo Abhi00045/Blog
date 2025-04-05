@@ -5,7 +5,9 @@ import '../main.css'
 function Login() {
   return (
     <div id='login-signup'>
-      <div id="left-picture"> picture Bhaki eh bhai</div>
+      <div id="left-picture">
+        <img id='signup-loginPic' src="./animation2.png" alt="" />
+      </div>
       <div id="right-picture">
       <SignIn signUpUrl="/signup" />
       </div>

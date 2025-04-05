@@ -59,7 +59,7 @@
         /* border: 1px solid #000; */
         border-radius: 25px;
         cursor: pointer;
-        background-color:  #8686e8;
+        background-color:  rgb(30,64,175);
         color: #ffffff;
     }
     div:hover{
@@ -90,6 +90,7 @@
     margin-top: 10px;
     display: flex;
     background: #fdfdfd;
+    border: #030303 2px solid;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -108,8 +109,8 @@
         #all-posts{
             padding:10px;
             border-radius: 25px;
+            background:rgb(30,64,175);
             cursor: pointer;
-            background-color:  #8686e8;
             color: #ffffff;
         }
         #remaining-posts{
@@ -120,7 +121,7 @@
             color: #000000;
         }
         #remaining-posts:hover{
-            background-color:  #8686e8;
+            background: rgba(5, 5, 172, 0.952);
             color: #ffffff;
         }
     }

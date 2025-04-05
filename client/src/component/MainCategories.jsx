@@ -9,7 +9,7 @@ function MainCategories() {
     <div id="main-categories">
         {/* links */}
         <div id="Link-categories">
-            <Link to='/posts' id='all-posts'>All Posts</Link>
+            <Link to='/posts'  id='all-posts'>All Posts</Link>
             <Link to='/posts' id='remaining-posts'>Web Design</Link>
             <Link to='/posts' id='remaining-posts'>Development</Link>
             <Link to='/posts' id='remaining-posts'>Databases</Link>

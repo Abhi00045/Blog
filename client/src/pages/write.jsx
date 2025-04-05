@@ -44,7 +44,7 @@ function write() {
       </div>
     </div>
     <div id="write-side-box">
-      img
+      <img id='blog-write-img' src="./a2.png" alt="" />
     </div>
    </div>
     </>
