@@ -24,7 +24,7 @@ function FeaturedComponent() {
 
 {/* 2nd one */}
           <div id="right-second">
-          <img src="./featured1.jpeg"alt=""  />
+          <img src="./asset01.webp"alt=""  />
                 <div id="left-post-one">
                     <div id="left-post-one-top">
                       <p>02</p>

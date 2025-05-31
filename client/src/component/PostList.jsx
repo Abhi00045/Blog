@@ -8,7 +8,7 @@ import './Navbar.css'
     <div id="main-postList-card">
         {/* left-Image-part-postList */}
         <div id="left-postList-card">
-            <img src="./postImg.jpeg" alt="" />
+            <img src="./asset01.webp" alt="" />
             </div>
             {/* right-Content-part-postList */}
             <div id="right-postList-card">
