@@ -3,8 +3,22 @@ import { Connection } from './connection.js';
 import postRouter from './routes/post.route.js';
 
 const app = express();
+app.use(express.json())
 
-app.use("/post",postRouter)
+app.use("/posts",postRouter);
+
+
+//-----------------------------------------------Error Handling---------
+
+// app.use((error, req,res,next)=>{
+// res.status(error.status)
+//     res.json({
+//         message : error.message || "something went wrong",
+//         status : error.status
+//     })
+// })
+
+//---------- Error Handling ---------------------------------------------------
 
 app.listen(3010 ,()=>{
     Connection();
