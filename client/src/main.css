@@ -53,8 +53,14 @@
 
 
 /* Adding-post-component{ */
-
-#write-main-box{
+.write-main-container{
+    background-color: #27305b;
+    margin: 15px;
+    width: 83vw;
+    height: 83vh;
+    border-radius: 25px;
+}
+/* #write-main-box{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -62,7 +68,7 @@
 
 
 #Adding-post-component{
-    /* height: 90px; */
+    height: 90px;
     height: 80vh;
     width: 100%;
     display: flex;
@@ -149,7 +155,7 @@
             background-color:rgb(30,64,175);
         }
     }   
-}
+} */
  /* postListpage */
 
  #main-postList{

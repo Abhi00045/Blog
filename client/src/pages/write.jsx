@@ -15,7 +15,10 @@ function write() {
 
    return(
     <>
-   <div id="write-main-box">
+    <div className="write-main-container">
+      hii
+    </div>
+   {/* <div id="write-main-box">
    <div id="Adding-post-component">
       <h1>Write a Blog</h1>
       <div id="adding-title">
@@ -46,7 +49,7 @@ function write() {
     <div id="write-side-box">
       <img id='blog-write-img' src="./a2.png" alt="" />
     </div>
-   </div>
+   </div> */}
     </>
    )
 }
