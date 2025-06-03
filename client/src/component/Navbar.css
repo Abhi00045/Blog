@@ -49,18 +49,21 @@
         display: none;
     }
 }
-
+hr{
+    background-color: #e97160;
+    color: #e97160;
+}
 #desktopMenu{
     display: flex;
     gap: 1.5rem;
     align-items: center;
     button{
-        padding: 0.5rem 1rem;
+        padding:3px;
         /* border: 1px solid #000; */
         border-radius: 25px;
         cursor: pointer;
-        background-color:  rgb(30,64,175);
-        color: #ffffff;
+        background-color:  #e97160;
+        color: #eaeaea; 
     }
     div:hover{
         hr{
@@ -89,7 +92,8 @@
 #main-categories{
     margin-top: 10px;
     display: flex;
-    background: #fdfdfd;
+    /* background: #fdfdfd; */
+    background: #a6a6a6;
     border: #030303 2px solid;
     flex-direction: row;
     justify-content: space-between;
@@ -109,20 +113,20 @@
         #all-posts{
             padding:10px;
             border-radius: 25px;
-            background:rgb(30,64,175);
+            background:#e97160;
             cursor: pointer;
-            color: #ffffff;
+            color: #eaeaea;
         }
         #remaining-posts{
             padding:10px;
             border-radius: 25px;
             cursor: pointer;
-            background-color:  #ffffff;
+            background-color:  #a6a6a6;
             color: #000000;
         }
         #remaining-posts:hover{
-            background: rgba(5, 5, 172, 0.952);
-            color: #ffffff;
+            background: #e97160;
+            color: #eaeaea;
         }
     }
 }
@@ -169,20 +173,25 @@ height: 50%;
             align-items: center;
             flex-wrap: wrap;
             p{
-                color: #010101;
+                /* color: #010101; */
+                color: #eaeaea;
+               
             }
             h1{
                 font-weight: 600;
-                color: #8686e8;
+                /* color: #8686e8; */
+                color: #eaeaea;
             }
             span{
-                color: #4d4d50;
+                /* color: #4d4d50; */
+                color: #eaeaea;
             }
         }
         #main{
             font-weight: 700;
             font-size: 20px;
-            color: #242323;
+            /* color: #242323; */
+            color: #eaeaea;
         }
     }
 }
@@ -214,20 +223,24 @@ height: 50%;
             align-items: center;
             flex-wrap: wrap;
             p{
-                color: #010101;
+                /* color: #010101; */
+                color: #eaeaea;
             }
             h1{
                 font-weight: 600;
-                color: #8686e8;
+                /* color: #8686e8; */
+                color: #eaeaea;
             }
             span{
-                color: #4d4d50;
+                /* color: #4d4d50; */
+                color: #eaeaea;
             }
         }
         #main{
             font-weight: 500;
             font-size: 15px;
-            color: #030303;
+            /* color: #030303; */
+            color: #eaeaea;
         }
     }
 }
@@ -262,7 +275,8 @@ height: 50%;
     /* width: 50%; */
     h1{
         font-weight: 600;
-        color: #2d2d2e;
+        /* color: #2d2d2e; */
+        color: #eaeaea;
         font-size: 25px;
     }
     #authors-title-time{
@@ -271,11 +285,13 @@ height: 50%;
         gap: 0.5rem;
         align-items: center;
         p{
-            color: #424040;
+            /* color: #424040; */
+            color: #eaeaea;
             /* padding-right: 2px; */
         }
         span{
-            color: #000000;
+            /* color: #000000; */
+            color: #eaeaea;
             padding: 2px;
             font-size: 16px;
             font-weight: 600;
@@ -307,11 +323,13 @@ height: 50%;
             gap: 0.5rem;
             align-items: center;
             p{  
-                color: #424040;
+                /* color: #424040; */
+                color: #eaeaea;
                 font-size: 15px;                
             }
             span{
-                color: #000000;
+                /* color: #000000; */
+                color: #eaeaea;
                 padding: 2px;
                 font-size: 16px;
                 font-weight: 600;
@@ -472,13 +490,14 @@ height: 50%;
     button{
         padding: 10px 20px;
         background-color: #000000;
-        color: #fff;
+        /* color: #fff; */
+        color: #eaeaea;
         border: none;
         border-radius: 4px;
         cursor: pointer;
     }
     button:hover{
-        background-color: #429aff;
+        background-color:  #e97160;
     }
 }
 #comment-box{
@@ -502,7 +521,7 @@ height: 50%;
         }
         span{
             font-weight: 600;
-            color: #429aff;
+            color:  #e97160;
         }
         p{
             font-size: 12px;

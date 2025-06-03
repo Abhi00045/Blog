@@ -9,6 +9,19 @@
         border-radius: 10px;
     }
 }
+#button-animate{
+    background-color: #e97160;
+    color: #eaeaea;
+}
+#test-text{
+    color: #eaeaea;
+}
+#Introduction-right{
+    color: #eaeaea; 
+}
+textPath{
+    color: #eaeaea; 
+}
 #top-home{
     display: flex;
     flex-direction: column;
@@ -24,7 +37,7 @@
     align-items: center;
     #Blogs{
         cursor: pointer;
-        color: rgb(30,64,175);
+        color:  #e97160;
     }
 }
 #Introduction-home{
@@ -40,11 +53,13 @@
     h1{
         font-size: 40px;
         font-weight: 800;
-        color: rgb(35, 34, 34);
+        /* color: rgb(35, 34, 34); */
+        color: #eaeaea;
     }
     p{
         font-size: 15px;
-        color: rgb(0, 0, 0);
+        /* color: rgb(0, 0, 0); */
+        color: #eaeaea;
     }
 }
 #Introduction-right{

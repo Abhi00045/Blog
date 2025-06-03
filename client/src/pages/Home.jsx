@@ -25,7 +25,7 @@ function Home() {
         <br />Stories, Ideas & Inspirations ✨</h1>
         <p>A space where ideas come to life, stories find their voice, and inspiration knows no bounds.</p>
        </div>
-       <div id="Introduction-right" className="hidden md:block px-2">
+       <div id="Introduction-right"  className="hidden md:block px-2">
        <Link to="update" className="hidden md:block relative">
           <svg
             viewBox="0 0 200 200"
@@ -40,15 +40,15 @@ function Home() {
               d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
             />
             <text>
-              <textPath href="#circlePath" startOffset="0%">
+              <textPath id='test-text' href="#circlePath" startOffset="0%">
                 Write your story •
               </textPath>
-              <textPath href="#circlePath" startOffset="50%">
+              <textPath id='test-text' href="#circlePath" startOffset="50%">
                 Share your idea •
               </textPath>
             </text>
           </svg>
-          <button className="absolute top-0 left-0 right-0 bottom-0 m-auto w-14 h-14 bg-blue-800 rounded-full flex items-center justify-center">
+          <button className="absolute top-0 left-0 right-0 bottom-0 m-auto w-14 h-14  rounded-full flex items-center justify-center" id='button-animate'>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
