@@ -20,7 +20,7 @@ import './Navbar.css'
                     <p>2 days ago</p>
                 </div>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo distinctio quia inventore optio laborum? Placeat ipsa quam iusto vel dicta! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas a, voluptate eos maiores aperiam esse, alias tempore nostrum libero neque sapiente explicabo quidem blanditiis</p>
-                <Link to="/singlepost" className='underline text-indigo-950'>Read More</Link>
+                <Link to="/singlepost" className='underline text-white-900'>Read More</Link>
             </div>
     </div>
     </>
