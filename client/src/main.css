@@ -10,17 +10,17 @@
     }
 }
 #button-animate{
-    background-color: #e97160;
-    color: #eaeaea;
+    background-color: #1e40af;
+    color: #e8e0e0;
 }
 #test-text{
-    color: #eaeaea;
+    color: #000000;
 }
 #Introduction-right{
-    color: #eaeaea; 
+    color: #000000; 
 }
 textPath{
-    color: #eaeaea; 
+    color: #000000; 
 }
 #top-home{
     display: flex;
@@ -37,7 +37,7 @@ textPath{
     align-items: center;
     #Blogs{
         cursor: pointer;
-        color:  #e97160;
+        color:  #1e40af;
     }
 }
 #Introduction-home{
@@ -54,12 +54,12 @@ textPath{
         font-size: 40px;
         font-weight: 800;
         /* color: rgb(35, 34, 34); */
-        color: #eaeaea;
+        color: #000000;
     }
     p{
         font-size: 15px;
         /* color: rgb(0, 0, 0); */
-        color: #eaeaea;
+        color: #000000;
     }
 }
 #Introduction-right{
@@ -69,7 +69,7 @@ textPath{
 
 /* Adding-post-component{ */
 .write-main-container{
-    background-color: #27305b;
+    background-color: #1e40af;
     margin: 15px;
     width: 83vw;
     height: 83vh;
