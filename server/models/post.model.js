@@ -27,10 +27,10 @@ const postSchema = new Schema(
             type:String,
             required:true
         },
-        visits:{
-            type:Boolean,
-            default:0
-        }
+        // visits:{
+        //     type:Boolean,
+        //     default:0
+        // }
     },{
         timestamps:true
     }
