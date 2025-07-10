@@ -7,7 +7,7 @@ import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
 import PostListpage from './pages/PostListpage.jsx'
 import Register from './pages/Register.jsx'
-import Write from './pages/write.jsx'
+import  { BlogUploader } from './pages/write.jsx'
 import Mainlayout from './layout/Mainlayout.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import SinglePostPage from './component/SinglePostPage.jsx'
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/update",
-        element: <Write/>,
+        element: <BlogUploader/>,
       }, 
       {
         path : '/singlepost',
