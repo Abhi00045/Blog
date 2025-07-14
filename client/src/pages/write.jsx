@@ -1,5 +1,5 @@
 // import React from 'react'
-// import '../main.css'
+import '../main.css'
 
 import { useUser } from '@clerk/clerk-react';
 import Register from './Register';
@@ -27,6 +27,7 @@ import ReactQuill from 'react-quill-new';
 
 import React, { useState } from "react";
 import { FaTwitter, FaInstagram } from "react-icons/fa";
+// import { Cursor } from 'mongoose';
 
 export const BlogUploader = () => {
 
@@ -79,7 +80,10 @@ export const BlogUploader = () => {
         >
           <option>Web Design</option>
           <option>Development</option>
-          <option>Security</option>
+          <option>Databases</option>
+          <option>Marketing</option>
+          <option>Search Engines</option>
+          <option>Others</option>
         </select>
 
         <input
@@ -105,7 +109,7 @@ export const BlogUploader = () => {
       <div style={styles.right}>
         {/* Upload Button */}
         <div style={styles.uploadContainer}>
-          {/* <label style={styles.uploadBtn}>
+          <label style={styles.uploadBtn}>
             Upload Image
             <input
               type="file"
@@ -114,8 +118,8 @@ export const BlogUploader = () => {
               onChange={handleChange}
               style={{ display: "none" }}
             />
-          </label> */}
-          <button>Upload Image</button>
+          </label>
+          
         </div>
 
         {/* Social Inputs */}
@@ -143,7 +147,7 @@ export const BlogUploader = () => {
               style={styles.input}
             />
           </div>
-          <button>ADD</button>
+          <button type='submit'>ADD</button>
         </div>
       </div>
     </div>
@@ -204,10 +208,14 @@ const styles = {
     color: "#fff",
     width: "100%",
   },
-  // uploadContainer: {
-  //   display: "flex",
-  //   justifyContent: "flex-end",
-  // },
+  uploadContainer: {
+    width:"50%",
+    padding: "10px",
+    /* text-transform: uppercase; */
+    border:"2px solid #1e40af",
+    borderRadius: "25px",
+    backgroundColor:" #1e40af"
+  },
   socialContainer: {
     display: "flex",
     flexDirection: "column",

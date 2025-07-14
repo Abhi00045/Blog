@@ -190,3 +190,11 @@ textPath{
         height: 70vh;
     }
  } */
+
+ button{
+    padding: 10px;
+    /* text-transform: uppercase; */
+    border:2px solid #1e40af;
+    border-radius: 25px;
+    background-color: #1e40af;
+ }
