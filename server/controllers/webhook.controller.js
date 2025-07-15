@@ -13,7 +13,7 @@ export const clerkController = (req , res)=>{
     const payload = req.body;
     const headers = req.headers;
 
-    const wh = new Webhook(secret);
+    const wh = new Webhook(WEBHOOK_SECRET);
     let eve;
     try {
         eve = wh.verify(payload, headers);
@@ -22,9 +22,13 @@ export const clerkController = (req , res)=>{
             message:"Webhook verification failed"
         });
     }
+    res.json(eve.data)
+    
 
-    // Do something with the message...
-
-    res.json({});
+    if(eve.type === "user.created" ){
+        const newUser = new User({
+            clerkId : eve.data.id,
+        })
+    }
     
 }
