@@ -49,7 +49,8 @@ const  Navbar = () => {
                 <SignedOut>
                 <Link to="/login">
                     <button style={{
-                        color: "#000000",
+                        color: "#ffffffff",
+                        padding:"2px"
                     }}>Login</button>
                 </Link>
       </SignedOut>

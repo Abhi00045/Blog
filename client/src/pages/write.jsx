@@ -109,9 +109,11 @@ export const BlogUploader = () => {
       <div style={styles.right}>
         {/* Upload Button */}
         <div style={styles.uploadContainer}>
-          <label style={styles.uploadBtn}>
+          <label style={{
+            cursor:"pointer",
+          }} >
             Upload Image
-            <input
+            <input 
               type="file"
               name="image"
               accept="image/*"
@@ -159,10 +161,11 @@ const styles = {
   container: {
     display: "flex",
     flexWrap: "wrap",
-    backgroundColor: "#0e0e0e",
+    backgroundColor: "#0000007b",
     padding: "70px",
+    border:"2px solid black",
     borderRadius: "20px",
-    color: "#fff",
+    color: "white",
     fontFamily: "sans-serif",
     gap: "20px",
   },
@@ -188,25 +191,29 @@ const styles = {
     padding: "10px",
     borderRadius: "10px",
     border: "1px solid #444",
-    backgroundColor: "#1a1a1a",
-    color: "#fff",
+    backgroundColor: "#0000007b",
+     border:"2px solid black",
+    color: "white",
     width: "100%",
   },
   select: {
     padding: "10px",
     borderRadius: "10px",
     border: "1px solid #444",
-    backgroundColor: "#1a1a1a",
-    color: "#fff",
+   backgroundColor: "#0000007b",
+     border:"2px solid black",
+    color: "white",
     width: "100%",
   },
   textarea: {
     padding: "10px",
     borderRadius: "10px",
     border: "1px solid #444",
-    backgroundColor: "#1a1a1a",
-    color: "#fff",
+    backgroundColor: "#0000007b",
+    border:"2px solid black",
+    color: "white",
     width: "100%",
+
   },
   uploadContainer: {
     width:"50%",
@@ -214,16 +221,22 @@ const styles = {
     /* text-transform: uppercase; */
     border:"2px solid #1e40af",
     borderRadius: "25px",
-    backgroundColor:" #1e40af"
+    backgroundColor:" #1e40af",
+    color: "white",
+    cursor:"pointer",
   },
+  
   socialContainer: {
     display: "flex",
     flexDirection: "column",
     gap: "10px",
+    color: "white",
   },
   socialInput: {
+    // backgroundColor: "#00000012",
     display: "flex",
     alignItems: "center",
     gap: "5px",
+    color: "white",
   },
 };
