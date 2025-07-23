@@ -22,13 +22,19 @@ export const clerkController = (req , res)=>{
             message:"Webhook verification failed"
         });
     }
-    res.json(eve.data)
+    // res.json(eve.data)
+    console.log("is this  working")
+    console.log(eve.data)
     
 
     if(eve.type === "user.created" ){
-        const newUser = new User({
-            clerkId : eve.data.id,
-        })
+        // const newUser = new User({
+        //     clerkId : eve.data.id,
+        //     username:eve.daya.username,
+        //     email:eve.data.email
+        // });
+        console.log(eve.data.id);
+        
     }
     
 }

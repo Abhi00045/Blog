@@ -5,12 +5,12 @@ import clerkRouter from './routes/webhook.route.js'
 
 const app = express();
 app.use("/clerk",clerkRouter);
+// console.log("hii")
 // console.log(clerkRouter)
 app.use(express.json())
 
 app.use("/posts",postRouter);
 // app.use("/clerk",clerkRouter)
-
 
 //-----------------------------------------------Error Handling---------
 
