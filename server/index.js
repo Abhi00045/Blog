@@ -2,12 +2,17 @@ import express from 'express';
 import { Connection } from './connection.js';
 import postRouter from './routes/post.route.js';
 import clerkRouter from './routes/webhook.route.js'
+import 'dotenv/config'
+
 
 const app = express();
-app.use("/clerk",clerkRouter);
+app.use(express.urlencoded({extended:true}));
+// console.log(process.env.CLERK_SECERT);
+
 // console.log("hii")
 // console.log(clerkRouter)
 app.use(express.json())
+app.use("/clerk",clerkRouter);
 
 app.use("/posts",postRouter);
 // app.use("/clerk",clerkRouter)

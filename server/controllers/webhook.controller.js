@@ -9,9 +9,11 @@ export const clerkController = (req , res)=>{
     if(!WEBHOOK_SECRET){
         throw new Error("webhook secert needed");
     }
-
+// console.log(payload , headers)
+console.log(req.body)
     const payload = req.body;
     const headers = req.headers;
+    // console.log(payload , headers)
 
     const wh = new Webhook(WEBHOOK_SECRET);
     let eve;
@@ -22,19 +24,19 @@ export const clerkController = (req , res)=>{
             message:"Webhook verification failed"
         });
     }
-    // res.json(eve.data)
+    res.json(eve)
     console.log("is this  working")
-    console.log(eve.data)
+    // console.log(eve)
     
 
-    if(eve.type === "user.created" ){
-        // const newUser = new User({
-        //     clerkId : eve.data.id,
-        //     username:eve.daya.username,
-        //     email:eve.data.email
-        // });
-        console.log(eve.data.id);
+    // if(eve.type === "user.created" ){
+    //     // const newUser = new User({
+    //     //     clerkId : eve.data.id,
+    //     //     username:eve.daya.username,
+    //     //     email:eve.data.email
+    //     // });
+    //     console.log(eve);
         
-    }
+    // }
     
 }
