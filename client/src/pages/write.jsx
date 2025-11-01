@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import create from '../../public/creeate.png'
 
 export default function CreateBlog() {
   const [title, setTitle] = useState("");
@@ -7,32 +8,11 @@ export default function CreateBlog() {
   const [content, setContent] = useState("");
 
   return (
-      <div className="w-full max-w-3xl bg-white rounded-2xl shadow-md p-8">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-semibold text-gray-800">Create a Blog</h1>
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white border border-none rounded-lg transition">
-            Publish
-          </button>
-        </div>
+      <div className="w-full h-full flex flex-row justify-between  bg-white rounded-2xl shadow-md p-9">
 
-        {/* Upload Image */}
-        <div className="mb-6">
-          <label className="block text-gray-700 font-medium mb-2">
-            Upload Cover Image
-          </label>
-          <input
-            type="file"
-            className="block w-full text-sm text-gray-500
-            file:mr-4 file:py-2 file:px-4
-            file:rounded-md file:border-0
-            file:text-sm file:font-semibold
-            file:bg-blue-50 file:text-blue-600
-            hover:file:bg-blue-100"
-          />
-        </div>
+        <div id="left" className="flex flex-col gap-5 p-1.5">
 
-        {/* Title */}
+          {/* Title */}
         <input
           type="text"
           value={title}
@@ -59,6 +39,28 @@ export default function CreateBlog() {
           className="w-full resize-none text-base leading-relaxed border-0 focus:ring-0 outline-none bg-transparent placeholder-gray-400"
         />
 
+        </div>
+        <div id="right" className="flex flex-col gap-5">
+
+          <div id="image">
+            <img src={create} alt="" className="w-96 h-35 rounded-md" />
+          </div>
+
+        <div className="mb-6">
+          <label className="block text-gray-700 font-medium mb-2">
+            Upload Cover Image
+          </label>
+          <input
+            type="file"
+            className="block w-full text-sm text-gray-500
+            file:mr-4 file:py-2 file:px-4
+            file:rounded-md file:border-0
+            file:text-sm file:font-semibold
+            file:bg-blue-50 file:text-blue-600
+            hover:file:bg-blue-100"
+          />
+        </div>
+
         {/* Social Links (optional) */}
         <div className="mt-8 flex gap-4">
           <input
@@ -72,6 +74,15 @@ export default function CreateBlog() {
             className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
+
+        <div className="flex justify-between items-center mb-6">
+          {/* <h1 className="text-3xl font-semibold text-gray-800">Create a Blog</h1> */}
+          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white border border-none rounded-lg transition">
+            Publish
+          </button>
+        </div>
+        </div>
+      
       </div>
   );
 }
