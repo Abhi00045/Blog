@@ -4,6 +4,7 @@ import './Navbar.css'
 import { useState } from 'react';
 // import Home from '../src/pages/Home';
 import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
+import logo from '../../public/blogBox.png'
 
 
 const  Navbar = () => {
@@ -13,8 +14,8 @@ const  Navbar = () => {
             {/* Logo */}
             <div id='logo'>
                 {/* <IKImage urlEndpoint={import.meta.env.IK_URL_ENDPOINT} path="/logo.png" alt="" /> */}
-                <Link to={"/"}><img src="/logo.png" alt="" /></Link>
-                <span>AbhiLog</span>
+                <Link to={"/"}><img src={logo} alt="" className='w-50 h-50' /></Link>
+                <span>Blog Box</span>
             </div>
             {/* mobileMEnu */}
             <div id='mobileMenu'>

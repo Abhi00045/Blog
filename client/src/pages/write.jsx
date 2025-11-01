@@ -1,242 +1,77 @@
-// import React from 'react'
-import '../main.css'
+"use client";
+import { useState } from "react";
 
-import { useUser } from '@clerk/clerk-react';
-import Register from './Register';
-import 'react-quill-new/dist/quill.snow.css';
-import ReactQuill from 'react-quill-new';
-
-// function write() {
-//    const { isLoaded, isSignedIn } = useUser();
-
-//    if(isLoaded && !isSignedIn) {
-//     return (<Register/>);
-//    }
-
-//    return(
-//     <>
-//     <div className="write-main-container">
-//       hii
-//     </div>
-   
-//     </>
-//    )
-// }
-
-// export default write
-
-import React, { useState } from "react";
-import { FaTwitter, FaInstagram } from "react-icons/fa";
-// import { Cursor } from 'mongoose';
-
-export const BlogUploader = () => {
-
-   const { isLoaded, isSignedIn } = useUser();
-
-   if(isLoaded && !isSignedIn) {
-    return (<Register/>);
-   }
-
-
-
-  const [form, setForm] = useState({
-    title: "",
-    category: "Web Design",
-    shortDesc: "",
-    content: "",
-    twitter: "",
-    instagram: "",
-    image: null,
-  });
-
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setForm({
-      ...form,
-      [name]: files ? files[0] : value,
-    });
-  };
+export default function CreateBlog() {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const [content, setContent] = useState("");
 
   return (
-    <div style={styles.container}>
-      {/* Left Section */}
-      <div style={styles.left}>
-        <h2 style={styles.heading}>Create a Blog</h2>
+      <div className="w-full max-w-3xl bg-white rounded-2xl shadow-md p-8">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-semibold text-gray-800">Create a Blog</h1>
+          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white border border-none rounded-lg transition">
+            Publish
+          </button>
+        </div>
 
-        <input
-          type="text"
-          placeholder="Title of the blog"
-          name="title"
-          value={form.title}
-          onChange={handleChange}
-          style={styles.input}
-        />
-
-        <select
-          name="category"
-          value={form.category}
-          onChange={handleChange}
-          style={styles.select}
-        >
-          <option>Web Design</option>
-          <option>Development</option>
-          <option>Databases</option>
-          <option>Marketing</option>
-          <option>Search Engines</option>
-          <option>Others</option>
-        </select>
-
-        <input
-          type="text"
-          placeholder="Short Description"
-          name="shortDesc"
-          value={form.shortDesc}
-          onChange={handleChange}
-          style={styles.input}
-        />
-
-        <textarea
-          name="content"
-          placeholder="Write your content here..."
-          value={form.content}
-          onChange={handleChange}
-          rows={6}
-          style={styles.textarea}
-        />
-      </div>
-
-      {/* Right Section */}
-      <div style={styles.right}>
-        {/* Upload Button */}
-        <div style={styles.uploadContainer}>
-          <label style={{
-            cursor:"pointer",
-          }} >
-            Upload Image
-            <input 
-              type="file"
-              name="image"
-              accept="image/*"
-              onChange={handleChange}
-              style={{ display: "none" }}
-            />
+        {/* Upload Image */}
+        <div className="mb-6">
+          <label className="block text-gray-700 font-medium mb-2">
+            Upload Cover Image
           </label>
-          
+          <input
+            type="file"
+            className="block w-full text-sm text-gray-500
+            file:mr-4 file:py-2 file:px-4
+            file:rounded-md file:border-0
+            file:text-sm file:font-semibold
+            file:bg-blue-50 file:text-blue-600
+            hover:file:bg-blue-100"
+          />
         </div>
 
-        {/* Social Inputs */}
-        <div style={styles.socialContainer}>
-          <div style={styles.socialInput}>
-            <FaTwitter size={20} style={{ marginRight: 8 }} />
-            <input
-              type="text"
-              placeholder="Twitter Link"
-              name="twitter"
-              value={form.twitter}
-              onChange={handleChange}
-              style={styles.input}
-            />
-          </div>
+        {/* Title */}
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Title of your blog..."
+          className="w-full text-3xl font-semibold mb-4 border-0 border-b border-gray-200 focus:ring-0 focus:border-gray-400 bg-transparent outline-none placeholder-gray-400"
+        />
 
-          <div style={styles.socialInput}>
-            <FaInstagram size={20} style={{ marginRight: 8 }} />
-            <input
-              type="text"
-              placeholder="Instagram Link"
-              name="instagram"
-              value={form.instagram}
-              onChange={handleChange}
-              style={styles.input}
-            />
-          </div>
-          <button type='submit'>ADD</button>
+        {/* Short Description */}
+        <textarea
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
+          placeholder="Short description..."
+          rows={2}
+          className="w-full resize-none text-lg mb-6 border-0 border-b border-gray-200 focus:ring-0 focus:border-gray-400 bg-transparent outline-none placeholder-gray-400"
+        />
+
+        {/* Blog Content */}
+        <textarea
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          placeholder="Start writing your content here..."
+          rows={12}
+          className="w-full resize-none text-base leading-relaxed border-0 focus:ring-0 outline-none bg-transparent placeholder-gray-400"
+        />
+
+        {/* Social Links (optional) */}
+        <div className="mt-8 flex gap-4">
+          <input
+            type="text"
+            placeholder="Twitter Link"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+          <input
+            type="text"
+            placeholder="Instagram Link"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
         </div>
       </div>
-    </div>
   );
-};
-
-// Internal CSS
-const styles = {
-  container: {
-    display: "flex",
-    flexWrap: "wrap",
-    backgroundColor: "#0000007b",
-    padding: "70px",
-    border:"2px solid black",
-    borderRadius: "20px",
-    color: "white",
-    fontFamily: "sans-serif",
-    gap: "20px",
-  },
-  left: {
-    flex: 1,
-    minWidth: "300px",
-    display: "flex",
-    flexDirection: "column",
-    gap: "15px",
-  },
-  right: {
-    // flex: 1,
-    // minWidth: "300px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-around",
-  },
-  heading: {
-    fontSize: "24px",
-    fontWeight: "bold",
-  },
-  input: {
-    padding: "10px",
-    borderRadius: "10px",
-    border: "1px solid #444",
-    backgroundColor: "#0000007b",
-     border:"2px solid black",
-    color: "white",
-    width: "100%",
-  },
-  select: {
-    padding: "10px",
-    borderRadius: "10px",
-    border: "1px solid #444",
-   backgroundColor: "#0000007b",
-     border:"2px solid black",
-    color: "white",
-    width: "100%",
-  },
-  textarea: {
-    padding: "10px",
-    borderRadius: "10px",
-    border: "1px solid #444",
-    backgroundColor: "#0000007b",
-    border:"2px solid black",
-    color: "white",
-    width: "100%",
-
-  },
-  uploadContainer: {
-    width:"50%",
-    padding: "10px",
-    /* text-transform: uppercase; */
-    border:"2px solid #1e40af",
-    borderRadius: "25px",
-    backgroundColor:" #1e40af",
-    color: "white",
-    cursor:"pointer",
-  },
-  
-  socialContainer: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "10px",
-    color: "white",
-  },
-  socialInput: {
-    // backgroundColor: "#00000012",
-    display: "flex",
-    alignItems: "center",
-    gap: "5px",
-    color: "white",
-  },
-};
+}
