@@ -45,7 +45,7 @@ export default function CreateBlog() {
           <div id="image">
             <img src={create} alt="" className="w-96 h-35 rounded-md" />
           </div>
-hiiimister
+{/* hiiimister */}
         <div className="mb-6">
           <label className="block text-gray-700 font-medium mb-2">
             Upload Cover Image
