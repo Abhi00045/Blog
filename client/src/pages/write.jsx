@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import create from '../../public/creeate.png'
 
 export default function CreateBlog() {
   const [title, setTitle] = useState("");
+
+
   const [desc, setDesc] = useState("");
   const [content, setContent] = useState("");
 
@@ -43,7 +45,7 @@ export default function CreateBlog() {
         <div id="right" className="flex flex-col gap-5">
 
           <div id="image">
-            <img src={create} alt="" className="w-96 h-35 rounded-md" />
+            <img src="https://i.pinimg.com/736x/b3/65/af/b365af02734efdf8cea73f0eff2f8920.jpg" alt="" className="w-96 h-35 rounded-md" />
           </div>
 {/* hiiimister */}
         <div className="mb-6">
