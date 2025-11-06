@@ -1,11 +1,26 @@
-import express from 'express';
+import express from 'express'; 
 import { Connection } from './connection.js';
 import postRouter from './routes/post.route.js';
 import clerkRouter from './routes/webhook.route.js'
 import 'dotenv/config'
+import cors from 'cors'
 
 
 const app = express();
+
+app.use(cors(
+    {
+        origin:[
+            "http://localhost:5173",
+            "http://localhost:5174",
+            "http://localhost:3000",
+        ],
+        credentials:true,
+        methods:["GET","POST","UPDATE","DELETE"],
+        allowedHeaders:["content-type","Authorization"]
+    }
+))
+
 app.use(express.urlencoded({extended:true}));
 // console.log(process.env.CLERK_SECERT);
 
