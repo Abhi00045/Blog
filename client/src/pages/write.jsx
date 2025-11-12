@@ -1,13 +1,23 @@
 "use client";
 import { useEffect, useState } from "react";
 import create from '../../public/creeate.png'
+import { useUser } from '@clerk/clerk-react';
+import Register from './Register';
 
 export default function CreateBlog() {
+
+  const { isLoaded, isSignedIn } = useUser();
+
+
   const [title, setTitle] = useState("");
 
 
   const [desc, setDesc] = useState("");
   const [content, setContent] = useState("");
+
+  if(isLoaded && !isSignedIn) {
+    return (<Register/>);
+   }
 
   return (
       <div className="w-full h-full flex flex-row justify-between  bg-white rounded-2xl shadow-md p-9">
