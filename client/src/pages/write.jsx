@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import create from '../../public/creeate.png'
+// import create from '../../public/creeate.png'
 import { useUser } from '@clerk/clerk-react';
 import Register from './Register';
 
