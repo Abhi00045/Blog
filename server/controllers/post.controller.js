@@ -23,9 +23,45 @@ export const getPost = async (req,res)=>{
 //   where we reqthe post from body we are saving/posting in our Db through .save()
 //res.json(post)==> send the data in json
 export const createPost = async (req,res)=>{
-    const newPost = new Post(req.body);
-    const post = await newPost.save();
-    res.json(post)
+    
+    try{
+        const { title, description, content, category, twitterLink, instagramLink, author } = req.body;
+
+    if(!title || !description || !content){
+        res.status(400).json({
+            success:false,
+            message:"all fields required"
+        })
+    }
+
+    const newPost = new Post({
+      title,
+      description,
+      content,
+      category,
+      twitterLink,
+      instagramLink,
+      user: author,
+      coverImage: req.file ? req.file.path : "",
+    })
+
+    // const post = await newPost.save();
+    // res.json(post)
+
+    await newPost.save();
+
+    res.status(200).json({
+        success:true,
+        message:"published Successfully"
+    })
+    }catch(err){
+        res.status(401).json({
+            success:false,
+            message:"fetch error"
+        })
+        console.log(err)
+    }
+
 }
 
 

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
 // import axios from "axios";
+import axios from 'axios'
 import Register from "./Register";
 
 export default function CreateBlog() {
@@ -20,9 +21,40 @@ export default function CreateBlog() {
     return <Register />;
   }
 
+  const handleSubmit = async(e)=>{
+     e.preventDefault();
+     setLoading(true)
+
+
+     const formData = new FormData();
+     formData.append("title",title);
+      formData.append("description", desc);
+      formData.append("content", content);
+      formData.append("category", category);
+      if(twitterLink) formData.append("twitterLink", twitterLink);
+      if(instagramLink) formData.append("instagramLink", instagramLink);
+      formData.append("author", user?.id || "guest");
+      if (coverImage) formData.append("coverImage", coverImage);
+
+      try{
+      const res = await axios.post("localhost:3010/create/post", formData, {
+      })
+      
+      if(res.status == 200){
+        console.log(res.data.message || "published Sucessfully");  
+      }else console.log( res.data.message ||"Something went Wrong asshole");
+      
+      
+      }catch(error){
+        console.log(error || "fetch error asshole")
+      }
+
+
+  }
   return (
       <form
         // onSubmit={}
+        onSubmit={handleSubmit}
         className="w-full max-w-6xl bg-white rounded-2xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row gap-8"
       >
         {/* LEFT PANEL */}
