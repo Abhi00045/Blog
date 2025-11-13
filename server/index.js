@@ -29,7 +29,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json())
 app.use("/clerk",clerkRouter);
 
-app.use("/posts",postRouter);
+app.use("/create",postRouter);
 // app.use("/clerk",clerkRouter)
 
 //-----------------------------------------------Error Handling---------

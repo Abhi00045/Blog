@@ -1,100 +1,135 @@
 "use client";
-import { useEffect, useState } from "react";
-// import create from '../../public/creeate.png'
-import { useUser } from '@clerk/clerk-react';
-import Register from './Register';
+import { useState } from "react";
+import { useUser } from "@clerk/clerk-react";
+// import axios from "axios";
+import Register from "./Register";
 
 export default function CreateBlog() {
-
-  const { isLoaded, isSignedIn } = useUser();
-
+  const { isLoaded, isSignedIn, user } = useUser();
 
   const [title, setTitle] = useState("");
-
-
   const [desc, setDesc] = useState("");
   const [content, setContent] = useState("");
+  const [category, setCategory] = useState("Development");
+  const [coverImage, setCoverImage] = useState(null);
+  const [twitterLink, setTwitterLink] = useState("");
+  const [instagramLink, setInstagramLink] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  if(isLoaded && !isSignedIn) {
-    return (<Register/>);
-   }
+  if (isLoaded && !isSignedIn) {
+    return <Register />;
+  }
 
   return (
-      <div className="w-full h-full flex flex-row justify-between  bg-white rounded-2xl shadow-md p-9">
-
-        <div id="left" className="flex flex-col gap-5 p-1.5">
-
+      <form
+        // onSubmit={}
+        className="w-full max-w-6xl bg-white rounded-2xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row gap-8"
+      >
+        {/* LEFT PANEL */}
+        <div className="flex-1 flex flex-col gap-6">
           {/* Title */}
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Title of your blog..."
-          className="w-full text-3xl font-semibold mb-4 border-0 border-b border-gray-200 focus:ring-0 focus:border-gray-400 bg-transparent outline-none placeholder-gray-400"
-        />
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title of your blog..."
+            className="w-full text-2xl md:text-3xl font-semibold border-b border-gray-300 focus:border-blue-500 bg-transparent outline-none pb-2 placeholder-gray-400"
+            required
+          />
 
-        {/* Short Description */}
-        <textarea
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
-          placeholder="Short description..."
-          rows={2}
-          className="w-full resize-none text-lg mb-6 border-0 border-b border-gray-200 focus:ring-0 focus:border-gray-400 bg-transparent outline-none placeholder-gray-400"
-        />
+          {/* Short Description */}
+          <textarea
+            value={desc}
+            onChange={(e) => setDesc(e.target.value)}
+            placeholder="Short description..."
+            rows={2}
+            className="w-full text-lg border-b border-gray-300 focus:border-blue-500 bg-transparent outline-none placeholder-gray-400 resize-none pb-2"
+            required
+          />
 
-        {/* Blog Content */}
-        <textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Start writing your content here..."
-          rows={12}
-          className="w-full resize-none text-base leading-relaxed border-0 focus:ring-0 outline-none bg-transparent placeholder-gray-400"
-        />
-
+          {/* Blog Content */}
+          <textarea
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="Start writing your content here..."
+            rows={10}
+            className="w-full text-base leading-relaxed border border-gray-200 focus:border-blue-400 outline-none rounded-lg p-3 placeholder-gray-400 resize-y"
+            required
+          />
         </div>
-        <div id="right" className="flex flex-col gap-5">
 
-          <div id="image">
-            <img src="https://i.pinimg.com/736x/b3/65/af/b365af02734efdf8cea73f0eff2f8920.jpg" alt="" className="w-96 h-35 rounded-md" />
+        {/* RIGHT PANEL */}
+        <div className="flex-1 flex flex-col gap-5">
+          {/* Category */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Select Category
+            </label>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full border border-gray-300 rounded-md px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              <option value="Development">Development</option>
+              <option value="Databases">Databases</option>
+              <option value="Search Engines">Search Engines</option>
+              <option value="Design">Design</option>
+              <option value="AI">AI</option>
+              <option value="Marketing">Marketing</option>
+            </select>
           </div>
-{/* hiiimister */}
-        <div className="mb-6">
-          <label className="block text-gray-700 font-medium mb-2">
-            Upload Cover Image
-          </label>
-          <input
-            type="file"
-            className="block w-full text-sm text-gray-500
-            file:mr-4 file:py-2 file:px-4
-            file:rounded-md file:border-0
-            file:text-sm file:font-semibold
-            file:bg-blue-50 file:text-blue-600
-            hover:file:bg-blue-100"
-          />
-        </div>
 
-        {/* Social Links (optional) */}
-        <div className="mt-8 flex gap-4">
-          <input
-            type="text"
-            placeholder="Twitter Link"
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          <input
-            type="text"
-            placeholder="Instagram Link"
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-        </div>
+          {/* Upload Cover Image */}
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Upload Cover Image
+            </label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setCoverImage(e.target.files[0])}
+              className="block w-full text-sm text-gray-500
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-md file:border-0
+              file:text-sm file:font-semibold
+              file:bg-blue-50 file:text-blue-600
+              hover:file:bg-blue-100"
+            />
+          </div>
 
-        <div className="flex justify-between items-center mb-6">
-          {/* <h1 className="text-3xl font-semibold text-gray-800">Create a Blog</h1> */}
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white border border-none rounded-lg transition">
-            Publish
-          </button>
+          {/* Social Links */}
+          <div className="flex flex-col md:flex-row gap-4">
+            <input
+              type="text"
+              value={twitterLink}
+              onChange={(e) => setTwitterLink(e.target.value)}
+              placeholder="Twitter Link"
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <input
+              type="text"
+              value={instagramLink}
+              onChange={(e) => setInstagramLink(e.target.value)}
+              placeholder="Instagram Link"
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div className="mt-6 flex justify-end">
+            <button
+              type="submit"
+              disabled={loading}
+              className={`px-6 py-2 text-white font-semibold rounded-lg transition-all duration-300 ${
+                loading
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-600 hover:bg-blue-700"
+              }`}
+            >
+              {loading ? "Publishing..." : "Publish Blog"}
+            </button>
+          </div>
         </div>
-        </div>
-      
-      </div>
+      </form>
   );
 }
