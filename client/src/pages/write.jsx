@@ -6,7 +6,7 @@ import axios from 'axios'
 import Register from "./Register";
 
 export default function CreateBlog() {
-  const { isLoaded, isSignedIn, user } = useUser();
+  const { isLoaded, isSignedIn} = useUser();
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -15,7 +15,7 @@ export default function CreateBlog() {
   const [coverImage, setCoverImage] = useState(null);
   const [twitterLink, setTwitterLink] = useState("");
   const [instagramLink, setInstagramLink] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   if (isLoaded && !isSignedIn) {
     return <Register />;
@@ -23,7 +23,7 @@ export default function CreateBlog() {
 
   const handleSubmit = async(e)=>{
      e.preventDefault();
-     setLoading(true)
+    //  setLoading(true)
 
 
      const formData = new FormData();
@@ -33,16 +33,23 @@ export default function CreateBlog() {
       formData.append("category", category);
       if(twitterLink) formData.append("twitterLink", twitterLink);
       if(instagramLink) formData.append("instagramLink", instagramLink);
-      formData.append("author", user?.id || "guest");
+      formData.append("author","guest");
       if (coverImage) formData.append("coverImage", coverImage);
 
       try{
-      const res = await axios.post("localhost:3010/create/post", formData, {
-      })
+      const res = await axios.post("http://localhost:3010/create/post", formData, {
+  headers: {
+    "Content-Type": "multipart/form-data",
+  }
+});
       
       if(res.status == 200){
         console.log(res.data.message || "published Sucessfully");  
-      }else console.log( res.data.message ||"Something went Wrong asshole");
+        alert("sucess")
+      }else{
+        console.log( res.data.message ||"Something went Wrong asshole");
+        alert("daed")
+      } 
       
       
       }catch(error){
@@ -151,14 +158,14 @@ export default function CreateBlog() {
           <div className="mt-6 flex justify-end">
             <button
               type="submit"
-              disabled={loading}
-              className={`px-6 py-2 text-white font-semibold rounded-lg transition-all duration-300 ${
-                loading
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
-              }`}
+              // disabled={loading}
+              className={
+                `px-6 py-2 text-white font-semibold rounded-lg transition-all duration-300 
+              `
+            }
             >
-              {loading ? "Publishing..." : "Publish Blog"}
+              publis
+              {/* {loading ? "Publishing..." : "Publish Blog"} */}
             </button>
           </div>
         </div>
