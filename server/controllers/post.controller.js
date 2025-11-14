@@ -41,7 +41,7 @@ export const createPost = async (req,res)=>{
       category,
       twitterLink,
       instagramLink,
-      user: author,
+    //   user: author,
       coverImage: req.file ? req.file.path : "",
     })
 

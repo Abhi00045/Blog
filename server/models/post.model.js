@@ -33,11 +33,11 @@ const postSchema = new Schema(
       type: String,
       default: "",
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User", // assuming you have a User model or Clerk ID
-      required: false, // you can make it true if linking users
-    },
+    // user: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "User", // assuming you have a User model or Clerk ID
+    //   required: false, // you can make it true if linking users
+    // },
   },
   {
     timestamps: true, // adds createdAt & updatedAt

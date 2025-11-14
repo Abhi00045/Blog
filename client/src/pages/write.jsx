@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
-import { useUser } from "@clerk/clerk-react";
+import { useUser, useAuth } from "@clerk/clerk-react";
 // import axios from "axios";
 import axios from 'axios'
 import Register from "./Register";
 
 export default function CreateBlog() {
   const { isLoaded, isSignedIn} = useUser();
+
+  const {token} = useAuth();
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
@@ -40,20 +42,20 @@ export default function CreateBlog() {
       const res = await axios.post("http://localhost:3010/create/post", formData, {
   headers: {
     "Content-Type": "multipart/form-data",
-  }
+     Authorization: `Bearer ${token}`,
+  },
 });
       
       if(res.status == 200){
         console.log(res.data.message || "published Sucessfully");  
-        alert("sucess")
+        alert("sucess");
       }else{
         console.log( res.data.message ||"Something went Wrong asshole");
-        alert("daed")
+        alert("daed");
       } 
-      
-      
-      }catch(error){
-        console.log(error || "fetch error asshole")
+      }catch(err){
+        alert("fuck yu")
+        console.log(err)
       }
 
 
